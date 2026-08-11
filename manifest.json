@@ -1,0 +1,16 @@
+{
+  "name": "篮球计分板",
+  "short_name": "计分板",
+  "description": "篮球比赛现场计分板：摄像头背景 + 比分浮层，支持比分加减、节数、队名/队色自定义。",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#000000",
+  "theme_color": "#0a0c14",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
