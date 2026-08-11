@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="篮球计分板" />
+  <meta name="theme-color" content="#0a0c14" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <title>篮球计分板</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <video id="cam" autoplay playsinline muted></video>
+  <div id="fallback" class="fallback hidden">未获得相机权限，使用纯色背景</div>
+
+  <div id="board" class="board">
+    <div class="team" id="teamA">
+      <div class="name" id="nameA">主队</div>
+      <div class="score" id="scoreA">0</div>
+    </div>
+    <div class="period" id="period">
+      <div class="plabel">节</div>
+      <div class="pval" id="pval">1</div>
+    </div>
+    <div class="team" id="teamB">
+      <div class="name" id="nameB">客队</div>
+      <div class="score" id="scoreB">0</div>
+    </div>
+  </div>
+
+  <img id="overlayImg" class="overlay-img hidden" alt="overlay" />
+
+  <button id="gear" class="gear" aria-label="编辑">⚙</button>
+
+  <div id="toolbar" class="toolbar hidden">
+    <button data-act="nameA">改主队名</button>
+    <button data-act="nameB">改客队名</button>
+    <button data-act="colorA">主队色</button>
+    <button data-act="colorB">客队色</button>
+    <button data-act="upload">上传图片</button>
+    <button data-act="reset">重置</button>
+    <button data-act="done">完成</button>
+  </div>
+
+  <input type="file" id="fileInput" accept="image/*" hidden />
+
+  <div id="colorPicker" class="picker hidden">
+    <div class="picker-title">选择队色</div>
+    <div id="swatches" class="swatches"></div>
+    <button id="pickerClose">取消</button>
+  </div>
+
+  <div id="startOverlay" class="start">
+    <div class="start-box">
+      <div class="start-title">篮球计分板</div>
+      <button id="startBtn" class="start-btn">▶ 开启相机并开始</button>
+      <button id="skipBtn" class="skip">不使用相机，直接开始</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
